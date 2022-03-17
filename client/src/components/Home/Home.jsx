@@ -4,6 +4,7 @@ import { getVideogames } from "../../store/action"
 import FilterByABC from "../Filter/FilterByABC"
 import FilterByGenre from "../Filter/FilterByGenre"
 import FilterByOrigin from "../Filter/FilterByOrigin"
+import FilterByRating from "../Filter/FilterByRating"
 import Loading from "../Loading/Loading"
 import CardContainer from "./CardContainer"
 import SearchBar from "./SearchBar"
@@ -36,6 +37,7 @@ const Home = () =>{
                 <FilterByGenre/>
                 <FilterByOrigin/>
                 <FilterByABC/>
+                <FilterByRating/>
                 estas en home
                 <div>
                     <CardContainer countries={countries}/>
