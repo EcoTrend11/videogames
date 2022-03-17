@@ -12,12 +12,15 @@ const getAllVideogames = async(req, res) =>{
     try{
         let api1 = (await axios.get(`https://api.rawg.io/api/games?key=${KEY}&page=1&page_size=40`)).data.results;
         let api2 = (await axios.get(`https://api.rawg.io/api/games?key=${KEY}&page=2&page_size=40`)).data.results;
-        let api3 = (await axios.get(`https://api.rawg.io/api/games?key=${KEY}&page=3&page_size=20`)).data.results;
+        let api3 = (await axios.get(`https://api.rawg.io/api/games?key=${KEY}&page=3&page_size=40`)).data.results;
         const database = await Videogame.findAll({
             include : Genre
         })
 
         let result = [...database,...api1, ...api2 ,...api3]
+        // let hash = {};
+        // let newresult = result.filter(o => hash[o.id] ? false : hash[o.id] = true);
+        // res.status(200).send(newresult)
 
         res.status(200).send(result)
     }
@@ -89,7 +92,7 @@ const getBase = async (req , res) =>{
         let database = await Videogame.findAll({
             include : Genre
         })
-        res.send(database)
+        res.status(200).send(database)
     }
     catch(err){
         console.log(err)
