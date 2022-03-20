@@ -30,7 +30,13 @@ function reducer ( state = initialState , action ) {
         let key = action.payload.key;
         let value = action.payload.value;
 
-        console.log(key)
+        if(value === ""){
+            return{
+                ...state,
+                OrVideogames : state.OrVideogames
+            }
+        }
+        
         let newFilter = [...state.videogames]
         let readyFilter = newFilter.filter( e => e[key].find(e => e.name === value))
 
@@ -55,6 +61,11 @@ function reducer ( state = initialState , action ) {
             return{
                 ...state,
                 OrVideogames : readyFilter
+            }
+        }else{
+            return{
+                ...state,
+                OrVideogames : state.OrVideogames
             }
         }
     }
@@ -99,6 +110,11 @@ function reducer ( state = initialState , action ) {
                 ...state,
                 OrVideogames : readyFilter
             }
+        }else{
+            return{
+                ...state,
+                OrVideogames : state.OrVideogames
+            }
         }
     }
     if(action.type === FILTER_BY_RATING){
@@ -115,7 +131,6 @@ function reducer ( state = initialState , action ) {
                 ...state,
                 OrVideogames : readyFilter
             }
-
         }
         if(value === "menor"){
             function comparar ( a, b ){
@@ -128,7 +143,11 @@ function reducer ( state = initialState , action ) {
                 ...state,
                 OrVideogames : readyFilter
             }
-
+        }else{
+            return{
+                ...state,
+                OrVideogames : state.OrVideogames
+            }
         }
     }
     return{

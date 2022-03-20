@@ -1,16 +1,11 @@
 import Loading from "../Loading/Loading"
 import Card from "./Card"
-const CardContainer = ({countries}) =>{
-    
+const CardContainer = ({videogames}) =>{
 
-    if(!countries){
-        return(
-            <Loading/>
-        )
-    }
+    
     return(
         <div>
-            {countries.map(e => 
+            {videogames.map(e => 
                 <Card e={e} key={e.id}/>)}
         </div>
     )

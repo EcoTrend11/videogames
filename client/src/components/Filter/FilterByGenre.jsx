@@ -28,7 +28,7 @@ const FilterByGenre = () =>{
         <div>
             <label> Filter by genres :  </label>
             <select name="genres" onChange={FilterGenre}>
-                <option>-------</option>
+                <option value = "">{"<"}--SELECT--{">"}</option>
                 {value.map(e => <option key={e.id} value={e.name}>{e.name}</option>)}
             </select>
         </div>

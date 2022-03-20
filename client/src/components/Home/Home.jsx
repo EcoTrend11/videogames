@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getVideogames } from "../../store/action"
-import FilterByABC from "../Filter/FilterByABC"
-import FilterByGenre from "../Filter/FilterByGenre"
-import FilterByOrigin from "../Filter/FilterByOrigin"
-import FilterByRating from "../Filter/FilterByRating"
 import Loading from "../Loading/Loading"
 import CardContainer from "./CardContainer"
+import FilterContainer from "./FilterContainer"
+import Pagination from "./Pagination"
 import SearchBar from "./SearchBar"
 
 const Home = () =>{
-  
-    const [ loading , setLoading ] = useState(true)
-    const countries = useSelector(function(state){
+
+    const [loading, setLoading] = useState(false)
+    const [currentPage, setCurrentpage] = useState(1)
+    const [postPerPage, setPostPerPage] = useState(15)
+    const paginate = (pageNumber) => setCurrentpage(pageNumber);
+
+    const videogames = useSelector(function(state){
         return state.OrVideogames
     })
 
@@ -24,23 +26,31 @@ const Home = () =>{
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
-    console.log(countries)
-    if(loading){
-        return (
-            <Loading/>
-        )
+    let indexOfLastCountry = "";
+    let indexOfFirstPost = "";
+    let currentPost = "";
+
+    if(videogames){//if beacuse "videogame.slice" can not read undefine
+        indexOfLastCountry = currentPage * postPerPage;
+        indexOfFirstPost = indexOfLastCountry - postPerPage;
+        currentPost = videogames.slice(indexOfFirstPost , indexOfLastCountry)
+    }
+
+    if(!videogames){
+        return  <Loading/>
     }
     else{
+        console.log(currentPost)
         return(
             <div>
                 <SearchBar/>
-                <FilterByGenre/>
-                <FilterByOrigin/>
-                <FilterByABC/>
-                <FilterByRating/>
+                <FilterContainer/>
                 estas en home
                 <div>
-                    <CardContainer countries={countries}/>
+                    <CardContainer videogames={currentPost}/>
+                </div>
+                <div>
+                    <Pagination postsPerPage = {postPerPage} totalPosts={videogames.length } paginate={paginate}/>
                 </div>
             </div>
             

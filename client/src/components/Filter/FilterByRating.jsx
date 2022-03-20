@@ -12,7 +12,7 @@ const FilterByRating = () =>{
         <div>
             <label> Filter by rating :  </label>
             <select onChange={filterOrderRating}>
-                <option>-------</option>
+                <option>{"<"}--SELECT--{">"}</option>
                 <option value="mayor" >Highest rating</option>
                 <option value="menor" >Lowest rating</option>
             </select>

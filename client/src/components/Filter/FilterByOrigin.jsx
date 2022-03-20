@@ -13,7 +13,7 @@ const FilterByOrigin = () => {
         <div>
             <label> Filter by origin :  </label>
             <select onChange={FilterOrigin}>
-                <option>-------</option>
+                <option value="">{"<"}--SELECT--{">"}</option>
                 <option value="api" >API</option>
                 <option value="database" >DATABASE</option>
             </select>

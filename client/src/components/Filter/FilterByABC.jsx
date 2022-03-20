@@ -13,7 +13,7 @@ const FilterByABC = () =>{
         <div>
             <label>Filter by order alphabetical :</label>
             <select onChange={filterOrder}>
-                <option>-------</option>
+                <option>{"<"}--SELECT--{">"}</option>
                 <option value="mayor" >  A - Z  </option>
                 <option value="menor" >  Z - A  </option>
             </select>
