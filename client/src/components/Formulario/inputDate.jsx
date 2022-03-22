@@ -1,11 +1,21 @@
-const InputDate = () =>{
+const InputDate = ({setFormulario , formulario}) =>{
 
-    let val = document.getElementById('dt').max = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
-    
+    let actualtime  = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+    //fecha  actual
+
+    function onChange (e){
+        let value = e.target.value
+        setFormulario({
+            ...formulario,
+            released : value
+        })
+    }
 
     return(
         <div>
-            <input type="date" min='1899-01-01' id="dt" /> 
+            <label htmlFor="start">Released : </label>
+            <input type="date" id="start" name="trip-start"
+                max={actualtime} onChange={onChange}/>
         </div>
     )
 }

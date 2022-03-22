@@ -22,14 +22,11 @@ const DetailVideogame = () =>{
          texto = detail.description.replace(/<[^>]*>?/g, '')
     }
 
-
-
     if(!detail){
         return(
             <Loading/>
         )
     }
-
     return(
         <div>
             <div>
@@ -51,6 +48,14 @@ const DetailVideogame = () =>{
                 <h4>
                     rating:<p>{detail.rating}</p>
                 </h4>
+                <h4>
+                    platforms:
+                </h4>
+                <ul>
+                    {detail.platforms.map( e => 
+                        <li key={e.platform.id}>{e.platform.name}</li>
+                    )}
+                </ul>
             </div>
         </div>
     )
