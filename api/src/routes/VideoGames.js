@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { Genre ,  Videogame } = require ('../db.js');
+const { Genre ,  Videogame, Platform } = require ('../db.js');
 const { Op } = require("sequelize");
 require('dotenv').config();
 const {
@@ -56,7 +56,7 @@ const getVideogamesId = async (req , res) =>{
     try{
         if(params.length === 36){
             const database = await Videogame.findByPk(params,{
-                include : Genre
+                include : [ Platform, Genre ]
               });
             res.status(200).send(database)
         }else{
@@ -70,19 +70,25 @@ const getVideogamesId = async (req , res) =>{
 
 const createVidegame = async (req,res) =>{
     try{
-    const { name , description , released , rating , platforms , genresId} = req.body
+    const { name , description , released , rating , genresId,platforms } = req.body
         const createVidegame = await Videogame.create({
             name : name,
             description : description,
             released : released,
             rating : rating,
-            platforms : platforms,
         })
-            createVidegame.addGenres(genresId)
-            res.status(200).send(createVidegame)
+            createVidegame.addGenres(genresId);
+            createVidegame.addPlatforms(platforms)
+
+
+            res.status(200).send({create : "successfully created",
+                                    info: createVidegame
+                                })
     }
     catch(error){
-        res.status(404).send(error)
+        res.status(404).send({create : "error",
+                                info: error
+                })
         console.log(error)
     }
 }

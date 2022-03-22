@@ -22,11 +22,14 @@ const DetailVideogame = () =>{
          texto = detail.description.replace(/<[^>]*>?/g, '')
     }
 
+
     if(!detail){
         return(
             <Loading/>
         )
     }
+
+    // console.log(platforms)
     return(
         <div>
             <div>

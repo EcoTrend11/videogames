@@ -19,25 +19,17 @@ const InputPlatforms = ({setFormulario , formulario}) =>{
 
     function onChange (e){
         let isChecked = e.target.checked
-        let value = e.target.value
-        let id = e.target.id
-
-        let valueToConcat = {
-            name : value,
-            id : id
-        }
-
-
+        let id = e.target.value
         if(isChecked){
             setFormulario({
                 ...formulario,
-                platforms : formulario.platforms.concat(valueToConcat)
-             })
+                platforms : formulario.platforms.concat(id)
+            })
         }
         else{
             setFormulario({
                 ...formulario,
-                platforms : formulario.platforms.filter(e => e.id !== id)
+                platforms : formulario.platforms.filter( e => e !== id)
             })
         }
     }
@@ -48,7 +40,7 @@ const InputPlatforms = ({setFormulario , formulario}) =>{
             <ul>
             {platform.map((e) => (
                     <li key={e.id}>
-                        <input type="checkbox" value={e.name} onChange={onChange} id={e.id}></input>
+                        <input type="checkbox" value={e.id} onChange={onChange} id={e.id}></input>
                         <label htmlFor={e.id}>{e.name}</label>
                     </li>
             ) )}
