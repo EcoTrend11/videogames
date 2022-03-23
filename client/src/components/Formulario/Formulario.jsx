@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import Loading from "../Loading/Loading"
 import Button from "./Button"
 import InputDate from "./InputDate"
 import InputDescription from "./InputDescription"
@@ -10,6 +11,7 @@ import InputRating from "./InputRating"
 
 
 const Formulario = () =>{
+    const [loading, setLoading] = useState(true)
     const [formulario , setFormulario] = useState(
         {
             name : "",
@@ -20,6 +22,14 @@ const Formulario = () =>{
             genresId : []
         }
     )
+    useEffect(function(){
+        setLoading(false)
+    },[])
+
+
+    if(loading){
+        return <Loading/>
+    }
     
 
     return(

@@ -1,0 +1,29 @@
+.containerBack{
+    background: #151515;
+    height: 100vh;
+    display: flex;
+    align-items: center; 
+}
+
+.container{
+    height: 200px;
+    margin: 0 auto; 
+    text-align: center;
+}
+.text{
+    margin: 0 auto;
+    color:#f6ede1c0;
+    font-size: 3rem;
+}
+.ico{
+    font-size: 6rem;
+    color:#f6ede1c0;
+    animation: ico 3s linear infinite;
+}
+
+@keyframes ico {    
+    to{
+        transform: rotate(360deg)
+    }
+}
+

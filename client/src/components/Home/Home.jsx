@@ -9,7 +9,7 @@ import SearchBar from "./SearchBar"
 
 const Home = () =>{
 
-    const [loading, setLoading] = useState(false)
+
     const [currentPage, setCurrentpage] = useState(1)
     const [postPerPage, setPostPerPage] = useState(15)
     const paginate = (pageNumber) => setCurrentpage(pageNumber);
@@ -20,9 +20,8 @@ const Home = () =>{
 
     const dispatch = useDispatch()
     useEffect( function (){
-        setLoading(true)
+
         dispatch(getVideogames())
-        setLoading(false)
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
