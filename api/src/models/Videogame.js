@@ -23,6 +23,10 @@ module.exports = (sequelize) => {
     rating : {
       type: DataTypes.STRING,
       allowNull : true
+    },
+    background_image:{
+      type: DataTypes.STRING,
+      allowNull: true
     }
   },{
     timestamps : false

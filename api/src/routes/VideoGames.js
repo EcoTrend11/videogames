@@ -70,12 +70,14 @@ const getVideogamesId = async (req , res) =>{
 
 const createVidegame = async (req,res) =>{
     try{
+    const imgDefault= "https://media.itpro.co.uk/image/upload/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1622821236/itpro/Laptop_showing_the_Postgres_logo_SHUTTERSTOCK.jpg"
     const { name , description , released , rating , genresId,platforms } = req.body
         const createVidegame = await Videogame.create({
             name : name,
             description : description,
             released : released,
             rating : rating,
+            background_image: imgDefault,
         })
             createVidegame.addGenres(genresId);
             createVidegame.addPlatforms(platforms)
