@@ -1,0 +1,28 @@
+.container{
+    margin: 15px  auto;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.containerInput{
+    display: flex;
+    flex-direction: column;
+    width:800px;
+}
+.label{
+    font-family: Orbitron;
+    font-size: 1.2rem;
+    color: #f6ede1c0;
+}
+
+.textarea{
+    width:99%;
+    height: 140px;
+    resize: none;
+    font-size: 1rem;
+    outline: none;
+    color: whitesmoke;
+    background-color:black
+
+}

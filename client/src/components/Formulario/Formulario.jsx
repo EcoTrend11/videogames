@@ -7,6 +7,7 @@ import InputGenres from "./InputGenres"
 import InputName from "./InputName"
 import InputPlatforms from "./InputPlatforms"
 import InputRating from "./InputRating"
+import style from "./Formulario.module.css"
 
 
 
@@ -33,7 +34,7 @@ const Formulario = () =>{
     
 
     return(
-        <div>
+        <div className={style.container}>
             <InputName setFormulario={setFormulario} formulario={formulario}/>
             <InputDescription setFormulario={setFormulario} formulario={formulario}/>
             <InputDate setFormulario={setFormulario} formulario={formulario}/>

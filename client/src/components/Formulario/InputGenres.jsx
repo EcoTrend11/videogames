@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import style from "./InputGenres.module.css"
 
 const InputGenres = ({setFormulario , formulario}) =>{
 
@@ -32,16 +33,22 @@ const InputGenres = ({setFormulario , formulario}) =>{
     }
 
     return(
-        <div>
-            <label>Genres : </label>
-            <ul>
-            {value.map((e) => (
-                    <li key={e.id}>
-                        <input type="checkbox" value={e.id} onChange={onChange} id={e.id}></input>
-                        <label htmlFor={e.id}>{e.name}</label>
-                    </li>
-            ) )}
-            </ul>
+        <div className={style.container}>
+            <div className={style.containerInput}>
+                <label className={style.label}>Genres : </label>
+                <div className={style.containerUl}>
+                    <ul className={style.ul}>
+                    {value.map((e) => (
+                        <div className={style.containerLi}>
+                            <li className={style.li} key={e.id}>
+                                <input className={style.input} type="checkbox" value={e.id} onChange={onChange} id={e.id}></input>
+                                <label htmlFor={e.id}>{e.name}</label>
+                            </li>
+                        </div>
+                    ) )}
+                    </ul>
+                </div>
+            </div>
         </div>
     )
 }

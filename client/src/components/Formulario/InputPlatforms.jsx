@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import env from "react-dotenv";
+import style from "./InputPlatform.module.css"
 
 const InputPlatforms = ({setFormulario , formulario}) =>{
 
@@ -35,16 +36,20 @@ const InputPlatforms = ({setFormulario , formulario}) =>{
     }
 
     return(
-        <div>
-            <label>Platforms : </label>
-            <ul>
-            {platform.map((e) => (
-                    <li key={e.id}>
-                        <input type="checkbox" value={e.id} onChange={onChange} id={e.id}></input>
-                        <label htmlFor={e.id}>{e.name}</label>
-                    </li>
-            ) )}
-            </ul>
+        <div className={style.container}>
+            <div className={style.containerInput}>
+                <label className={style.label}>Platforms : </label>
+                <ul className={style.ul}>
+                {platform.map((e) => (
+                    <div className={style.containerLi}> 
+                        <li key={e.id}>
+                            <input type="checkbox" value={e.id} onChange={onChange} id={e.id}></input>
+                            <label htmlFor={e.id}>{e.name}</label>
+                        </li>
+                    </div>
+                ) )}
+                </ul>
+            </div>
         </div>
     )
 }

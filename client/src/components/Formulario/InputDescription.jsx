@@ -1,3 +1,4 @@
+import style from "./InputDescription.module.css"
 const InputDescription = ({setFormulario , formulario}) =>{
 
     function onChange (e){
@@ -9,9 +10,11 @@ const InputDescription = ({setFormulario , formulario}) =>{
         })
     }
     return(
-        <div>
-            <label htmlFor="description">Description : </label>
-            <textarea id="description" onChange={onChange}/>
+        <div className={style.container}>
+            <div className={style.containerInput}>
+                <label className={style.label} htmlFor="description">Description : </label>
+                <textarea className={style.textarea} id="description" onChange={onChange}/>
+            </div>
         </div>
     )
 }

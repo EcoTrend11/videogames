@@ -1,0 +1,21 @@
+.container{
+    margin: 15px  auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.containerInput{
+    margin: 0 auto;
+}
+.label{
+    font-family: Orbitron;
+    font-size: 1.2rem;
+    color: #f6ede1c0;
+}
+.input{
+    padding: 4px 10px;
+    font-size: 1.2rem;
+    outline:none;
+    background-color:black;
+    color: whitesmoke ;
+}

@@ -1,0 +1,40 @@
+.container{
+    background-color: #202020;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding:20px 40px 20px 40px ;
+    color: #f6ede1c0;
+}
+.imgContainer{
+    background-color: #0c0c0c;
+    display: flex;
+    margin: 0 auto;
+    height: 100%;
+    max-width:1000px;
+    padding: 3vh 0 ;
+}
+.img{
+    width:100%;
+    object-fit: scale-down;
+}
+.containerDetail{
+    margin-top: 30px;
+}
+
+.title{
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 2rem;
+}
+
+.subtitle{
+    font-family: Chakra Petch;
+    font-size: 1.5rem;
+
+}
+
+.text{
+    font-family: Cormorant Garamond;
+    font-size: 20px;
+    list-style-type: square;
+}

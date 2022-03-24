@@ -1,0 +1,28 @@
+.container{
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.containerInput{
+    display: flex;
+    margin-top: 18px;
+}
+
+.label{
+    font-family: Orbitron;
+    font-size: 1.2rem;
+    color: #f6ede1c0;
+
+}
+.value{
+    width:1.1rem;
+    font-family: Orbitron;
+    font-size: 1.2rem;
+    color: #f6ede1c0;
+}
+.input{
+    margin: 0 10px;
+}
+
+

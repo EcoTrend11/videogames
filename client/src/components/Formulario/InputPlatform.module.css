@@ -1,0 +1,26 @@
+.container{
+    background-color: red;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.label{
+    text-align: center;
+}
+
+.ul{
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.containerLi{
+    background-color: blue;
+    width: 100px;
+    margin: 5px 15px;
+}
+

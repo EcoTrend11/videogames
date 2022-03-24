@@ -1,0 +1,34 @@
+.container{
+    margin: 15px  auto;
+    display: flex;
+    justify-content: space-evenly;    
+}
+.containerInput{
+    display: flex;
+    flex-direction: column;
+}
+.containerUl{
+    background-color: #181818;
+}
+.label{
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 1.2rem;
+    color: #f6ede1c0;
+    margin-bottom: 10px;
+}
+.ul{
+
+    list-style-type: none; /* Remove bullets */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.li{
+    margin: 5px 10px;
+    width: 100px;
+    font-family: Chakra Petch;
+    color: #f6ede1c0;
+}
+
