@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux"
 import { filterRating } from "../../store/action"
+import style from "./FilterByRating.module.css"
 
 const FilterByRating = () =>{
     const dispatch = useDispatch()
@@ -9,12 +10,12 @@ const FilterByRating = () =>{
         dispatch(filterRating(value))
     }
     return (
-        <div>
-            <label> Filter by rating :  </label>
-            <select onChange={filterOrderRating}>
-                <option>{"<"}--SELECT--{">"}</option>
-                <option value="mayor" >Highest rating</option>
-                <option value="menor" >Lowest rating</option>
+        <div className={style.container}>
+            <label className={style.title}> Filter by rating :  </label>
+            <select className={style.select} onChange={filterOrderRating}>
+                <option className={style.option}>{"<"}--SELECT--{">"}</option>
+                <option className={style.option} value="mayor" >Highest rating</option>
+                <option className={style.option} value="menor" >Lowest rating</option>
             </select>
         </div>
     )

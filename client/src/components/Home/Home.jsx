@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getVideogames } from "../../store/action"
 import Loading from "../Loading/Loading"
+
+import Button from "./Button"
 import CardContainer from "./CardContainer"
 import FilterContainer from "./FilterContainer"
 import Pagination from "./Pagination"
@@ -44,9 +46,10 @@ const Home = () =>{
             <div>
                 <SearchBar/>
                 <FilterContainer/>
-                estas en home
+                <Button/>
+                <Pagination postsPerPage = {postPerPage} totalPosts={videogames.length } paginate={paginate}/>
                 <div>
-                    <CardContainer videogames={currentPost}/>
+                    <CardContainer videogames={currentPost} postsPerPage = {postPerPage} totalPosts={videogames.length } paginate={paginate}/>
                 </div>
                 <div>
                     <Pagination postsPerPage = {postPerPage} totalPosts={videogames.length } paginate={paginate}/>

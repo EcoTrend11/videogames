@@ -1,0 +1,32 @@
+
+.container{
+    margin: 0 auto;
+    padding: 25px 0 15px 0;
+    max-width: 1300px;
+    background-color:#202020 ;
+}
+
+.containerUl{
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.containerLi{
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+.button{
+    background: #313131;
+    font-family: Orbitron;
+    width: 40px
+}
+
+.button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+

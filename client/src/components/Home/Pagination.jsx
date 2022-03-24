@@ -1,3 +1,4 @@
+import style from "./Pagination.module.css"
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
     const pageNumbers = [];
   
@@ -6,17 +7,20 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
     }
   
     return (
-      <nav>
-        <ul className='pagination'>
-          {pageNumbers.map(number => (
-            <li key={number} className='page-item'>
-              <button onClick={() => paginate(number)}  >
-                {number}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className={style.container}>
+        <nav className={style.containerUl}>
+          <ul className={style.containerLi}>
+            {pageNumbers.map(number => (
+              <li className={style.li} key={number} >
+                <button  className={style.button} onClick={()=> { paginate(number)
+                }}  >
+                  {number}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     );
   };
 

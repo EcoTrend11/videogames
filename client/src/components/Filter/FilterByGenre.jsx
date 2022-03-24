@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { filterGenre } from "../../store/action"
+import style from "./FilterByGenre.module.css"
 
 const FilterByGenre = () =>{
     const dispatch = useDispatch()
@@ -25,11 +26,11 @@ const FilterByGenre = () =>{
 
 
     return (
-        <div>
-            <label> Filter by genres :  </label>
-            <select name="genres" onChange={FilterGenre}>
-                <option value = "">{"<"}--SELECT--{">"}</option>
-                {value.map(e => <option key={e.id} value={e.name}>{e.name}</option>)}
+        <div className={style.container}>
+            <label className={style.title}> Filter by genres :  </label>
+            <select className={style.select} name="genres" onChange={FilterGenre}>
+                <option className={style.option} value = "">{"<"}--SELECT--{">"}</option>
+                {value.map(e => <option className={style.option} key={e.id} value={e.name}>{e.name}</option>)}
             </select>
         </div>
     )

@@ -1,12 +1,14 @@
-import Loading from "../Loading/Loading"
 import Card from "./Card"
+import style from "./CardContainer.module.css"
 const CardContainer = ({videogames}) =>{
 
     
     return(
-        <div>
-            {videogames.map(e => 
-                <Card e={e} key={e.id}/>)}
+        <div className={style.container}>
+            <div className={style.containerCards}>
+                {videogames.map(e => 
+                    <Card e={e} key={e.id}/>)}
+            </div>
         </div>
     )
 }

@@ -1,5 +1,50 @@
-.containerBack{
-    background: #151515;
-    height: 100vh;
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px 0 10px;
+}
+
+.container{
+
+    padding-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+
+.tittle{
+    text-align: center;
+    width: 100%;
+    font-family: 'Bungee';
+    color: #f6ede1c0;
+    font-size: 6rem;
+}
+
+.go{
+    margin: 5rem auto;
+    width:200px;
+    background-color: #f6ede1c0;
+    font-family: 'Changa';
+    font-size: 2.5rem;
+    font-weight: bolder;
+    border-radius: 15px;
+    text-align: center;
+
+}
+.link{
+    text-decoration: none;
+    color: #000000c0
+}
+
+.go:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.img{
+    width:650px
 }
 

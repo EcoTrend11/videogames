@@ -1,0 +1,42 @@
+.container{
+    padding: 25px;
+    width: 300px;
+    background-color: #181818;
+    margin:25px  0; 
+    border-radius: 15px;
+}
+.container:hover{
+    transform: scale(1.03);
+    transition: 0.7s
+}
+
+.imgContainer{
+    width:300px;
+    height: 250px;
+    background: #0c0c0c;
+    display: flex;
+
+}
+
+.img {
+    width: 300px;
+}
+.img{
+    object-fit: scale-down;
+}
+
+.link{
+    color: #f6ede1c0;
+    text-decoration: none;
+}
+.tittle{
+    text-align: center;
+    font-family: Chakra Petch;
+}
+.containerDetail{
+    padding: 0 20px;
+    font-family: Orbitron;
+}
+.li{
+    list-style-type: square;
+}

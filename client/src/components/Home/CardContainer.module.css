@@ -1,0 +1,11 @@
+.container{
+    background-color: #202020;
+    max-width: 1300px;
+    margin: 0 auto;
+
+}
+.containerCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

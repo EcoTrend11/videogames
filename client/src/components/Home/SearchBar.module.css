@@ -1,0 +1,37 @@
+.GeneralContainer{
+    background-color:#202020
+}
+
+.container{
+
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.containerInputs{
+    margin: 0 auto
+}
+
+.input{
+    height: 40px;
+    max-width: 350px;
+    border: none;
+    padding: 0 20px;
+    outline: none;
+    background-color:black;
+    color: #f5f5f5;
+    font-size: 1.1rem;
+
+}
+
+.button{
+    background-color:#313131;
+    border: none;
+    height: 40px;
+    width: 64px;
+    color: #f5f5f5;
+    align-items: center;
+    font-size: 1.1rem;
+}

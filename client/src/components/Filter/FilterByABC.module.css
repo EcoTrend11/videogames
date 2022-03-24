@@ -1,0 +1,20 @@
+.container{
+    width:250px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.title{
+    font-family: Orbitron;
+    color: #f6ede1c0;
+}
+
+.option{
+    color: #f6ede1c0;
+}
+
+.select{
+    text-align: center;
+    background: #373737;
+    color: #f6ede1c0;
+}

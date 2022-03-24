@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux";
 import { getVideogamesName } from "../../store/action";
+import { BiSearch } from 'react-icons/bi';
+import style from "./SearchBar.module.css"
 const SearchBar = () =>{
 
     const dispatch = useDispatch()
@@ -22,18 +24,24 @@ const SearchBar = () =>{
 
     console.log(name)
     return ( 
-        <div>
-            <input
-                type="text"
-                placeholder="Search Game ..."
-                onChange={ (e) => {handleInputChange(e)}}
-            />
-            <button
-                onClick={(e) => {handleInputSubmit(e)}}
-                type="submit"
-            >
-                Search
-            </button>
+        <div className={style.GeneralContainer}>
+            <div className={style.container}>
+                <div className={style.containerInputs}>
+                    <input
+                        className={style.input}
+                        type="text"
+                        placeholder="Search Game ..."
+                        onChange={ (e) => {handleInputChange(e)}}
+                    />
+                    <button
+                        className={style.button}
+                        onClick={(e) => {handleInputSubmit(e)}}
+                        type="submit"
+                    >
+                        <BiSearch/>
+                    </button>
+                </div>
+            </div>
         </div>
     )
 }
