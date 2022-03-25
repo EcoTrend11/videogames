@@ -1,30 +1,45 @@
-import { useEffect } from "react"
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
-import { getVideogameDetail } from "../../store/action"
+import { clear, getVideogameDetail } from "../../store/action"
+import Return from "../Formulario/Return"
 import Loading from "../Loading/Loading"
 import style from "./DetailVideogame.module.css"
-import Title from "../Title/Title"
+
 
 const DetailVideogame = () =>{
     const {videogameId} = useParams()
     const dispatch = useDispatch()
-    const detail = useSelector(function(state){
+    // const [detail, setDetail] = useState()
+
+    let detail = useSelector(function(state){
         return state.detailVideogame
     })
 
+
     useEffect(()=>{
         dispatch(getVideogameDetail(videogameId))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
+    // useEffect(()=>{
+    //     console.log("hize elconsole en el segundo detail" +prueba)
+    //     setDetail(prueba)
+    // })
+    useEffect(()=>{
+        return()=>{
+            console.log("limpie todo")
+            // setDetail()
+            dispatch(clear())
+        }
     },[])
     
+    console.log("soy el console de detail " + detail)
     //delete html tag
     let texto = ""
     if(detail){
          texto = detail.description.replace(/<[^>]*>?/g, '')
     }
-
-
+    console.log(detail)
     if(!detail){
         return(
             <Loading/>
@@ -33,7 +48,7 @@ const DetailVideogame = () =>{
 
     return(
         <div className={style.container}>
-            <Title/>
+            <Return/>
             <div className={style.imgContainer}>
                 <img className={style.img} src={detail.background_image} alt="img not found"/>
             </div>

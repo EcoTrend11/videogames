@@ -1,4 +1,4 @@
-import { FILTER_BY_ABC, FILTER_BY_GENRE, FILTER_BY_ORIGIN, FILTER_BY_RATING, GET_DETAIL, GET_VIDEOGAMES, GET_VIDEOGAMES_NAME } from './constants'
+import { CLEAR, FILTER_BY_ABC, FILTER_BY_GENRE, FILTER_BY_ORIGIN, FILTER_BY_RATING, GET_DETAIL, GET_VIDEOGAMES, GET_VIDEOGAMES_NAME } from './constants'
 
 export function getVideogames () {
     return function ( dispatch ){
@@ -82,5 +82,11 @@ export function filterRating( value ){
     return{
         type: FILTER_BY_RATING,
         payload : value
+    }
+}
+
+export function clear(){
+    return{
+        type : CLEAR
     }
 }

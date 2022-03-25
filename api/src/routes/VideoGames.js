@@ -83,12 +83,14 @@ const createVidegame = async (req,res) =>{
             createVidegame.addPlatforms(platforms)
 
 
-            res.status(200).send({create : "successfully created",
+            res.status(200).send({  isCreate : true,
+                                    mensage : "successfully created",
                                     info: createVidegame
                                 })
     }
     catch(error){
-        res.status(404).send({create : "error",
+        res.status(404).send({  isCreate: false,
+                                mensage : "error to create",
                                 info: error
                 })
         console.log(error)

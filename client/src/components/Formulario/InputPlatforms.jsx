@@ -41,7 +41,7 @@ const InputPlatforms = ({setFormulario , formulario}) =>{
                 <label className={style.label}>Platforms : </label>
                 <ul className={style.ul}>
                 {platform.map((e) => (
-                    <div className={style.containerLi}> 
+                    <div key={e.id} className={style.containerLi}> 
                         <li key={e.id}>
                             <input type="checkbox" value={e.id} onChange={onChange} id={e.id}></input>
                             <label htmlFor={e.id}>{e.name}</label>

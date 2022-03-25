@@ -1,0 +1,19 @@
+.container{
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.link{
+    text-decoration: none;
+    font-size: 3rem;
+    color: #f6ede1c0;
+    border: 4px solid  #f6ede1c0;
+    line-height: 0;
+    border-radius:50%;
+    padding:10px;
+    
+}

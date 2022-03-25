@@ -1,15 +1,24 @@
 import axios from "axios"
+import style from "./Button.module.css"
 
 const Button = ({formulario}) => {
+
+
     async function onClick (e){
         e.preventDefault()
         let post = (await axios.post("http://localhost:3001/create",formulario)).data
-        alert(post.create)
+        console.log(post)
+        if(post.isCreate === true){
+            alert(post.mensage)
+        }
+        else{
+            alert("error to create")
+        }
     }
 
     return(
-        <div>
-            <button onClick={onClick}>click me</button>
+        <div className={style.container}>
+            <button className={style.button} onClick={onClick} >CREATE</button>
         </div>
     )
 }

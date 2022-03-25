@@ -1,4 +1,4 @@
-import { FILTER_BY_ABC, FILTER_BY_GENRE, FILTER_BY_ORIGIN, FILTER_BY_RATING, GET_DETAIL, GET_VIDEOGAMES, GET_VIDEOGAMES_NAME } from "../action/constants"
+import { CLEAR, FILTER_BY_ABC, FILTER_BY_GENRE, FILTER_BY_ORIGIN, FILTER_BY_RATING, GET_DETAIL, GET_VIDEOGAMES, GET_VIDEOGAMES_NAME } from "../action/constants"
 
 const initialState = {
     videogames : [],
@@ -7,6 +7,12 @@ const initialState = {
 }
 
 function reducer ( state = initialState , action ) {
+    if( action.type === CLEAR){
+        return {
+            ...state,
+            detailVideogame : undefined
+        }
+    }
     if( action.type === GET_VIDEOGAMES ) {
         return {
             ...state,

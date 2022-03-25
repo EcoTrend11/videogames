@@ -5,3 +5,4 @@ export const FILTER_BY_GENRE = "FILTER_BY_GENRE";
 export const FILTER_BY_ORIGIN = "FILTER_BY_ORIGIN";
 export const FILTER_BY_ABC = "FILTER_BY_ABC";
 export const FILTER_BY_RATING = "FILTER_BY_RATING";
+export const CLEAR = "CLEAR";

@@ -39,7 +39,7 @@ const InputGenres = ({setFormulario , formulario}) =>{
                 <div className={style.containerUl}>
                     <ul className={style.ul}>
                     {value.map((e) => (
-                        <div className={style.containerLi}>
+                        <div key={e.id} className={style.containerLi}>
                             <li className={style.li} key={e.id}>
                                 <input className={style.input} type="checkbox" value={e.id} onChange={onChange} id={e.id}></input>
                                 <label htmlFor={e.id}>{e.name}</label>
